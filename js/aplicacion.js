@@ -8,10 +8,7 @@ function toggleMenu() {
 
 openMenuBtn.addEventListener("click", toggleMenu);
 closeMenuBtn.addEventListener("click", toggleMenu);
-
-
 const menuLinks = document.querySelectorAll('.menu a[href^="#"]')
-
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry => {
        const id = entry.target.getAttribute("id");
@@ -39,18 +36,17 @@ menuLinks.forEach(menuLink => {
     
 })
 
-
 function getData(){
   var nombre = document.getElementById('nombre').value;
   var email = document.getElementById('email').value;
   var mensaje = document.getElementById('mensaje').value;
   
-
   if(nombre=='' ||  email=="" || mensaje==''){
     alert('Lo campo estasn vacio ');
   }else if(validarEmail(email)){
+  window.location.replace('enviar.html');
 
-  window.location.replace('enviar.html');   
+  
   //creacion de  html
   document.write('<!DOCTYPE html>');
   document.write('<html lang="en">');
