@@ -1,15 +1,11 @@
 //MENU
-//creacion de menu para moviles mediante javascript.
 const menu = document.querySelector(".menu");
-//declaramos las varias const para optener  del boton una confirmacion, 
 const openMenuBtn = document.querySelector(".open-menu");
 const closeMenuBtn = document.querySelector(".close-menu");
-//creamos laa funcion Menu  del token.
 function toggleMenu() {
-// verificamos que obtiene el token si un true o false.
   menu.classList.toggle("menu_opened");
 }
-//utilizamos el evento  addEventListerner para ver  que datos obtenemos al momento de dar click en nuestros botones.
+
 openMenuBtn.addEventListener("click", toggleMenu);
 closeMenuBtn.addEventListener("click", toggleMenu);
 
@@ -45,21 +41,15 @@ menuLinks.forEach(menuLink => {
 
 
 function getData(){
-  //Obtenemos  los datos nombre, e-mail y mensaje  y le guardamos en variables para obtener el valor de nuestro formulario.
   var nombre = document.getElementById('nombre').value;
   var email = document.getElementById('email').value;
   var mensaje = document.getElementById('mensaje').value;
-  
-  /*
-  verificamos  si los campos estan vacios o no,  si estan vacios me lanza una alerta y no me deja seguir
-  si los campos  estan  con datos, la condicion se cumple y procesa el html descrito por  los document .write()
-  */
   
 
   if(nombre=='' ||  email=="" || mensaje==''){
     alert('Lo campo estasn vacio ');
   }else if(validarEmail(email)){
-  // me  dirige el ancho  enviar html donde se imprimara nuestro html de enviar.
+
   window.location.replace('enviar.html');   
   //creacion de  html
   document.write('<!DOCTYPE html>');
@@ -95,36 +85,21 @@ function getData(){
 
 function soloLetras(e){
   key = e.keyCode || e.which;
-/*
-La sentencia String.fromCharCode(key) obtiene el caracter presionado por el usuario que 
-añadiendo la sentencia toLowerCase() convertiríamos la letra a minúscula. Con esto 
-guardamos la letra presionada por el usuario en la variable.
-*/
+
   tecla = String.fromCharCode(key).toLowerCase();
 
-/*
-Guardamos en la variable “letras” las letras permitidas por nosotros. 
-Guardamos los keyCode de las teclas especiales como (BackSpace , flecha izquierda, flecha derecha, Supr).
-
-*/
   letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
   especiales = "8-37-39-46";
 
   tecla_especial = false
-  /*
-Se busca si está la tecla presionada por el usuario en el array de teclas especiales “especiales”
-  */
+
   for(var i in especiales){
        if(key == especiales[i]){
            tecla_especial = true;
            break;
        }
    }
-/*
- Hacemos uso de la propiedad indexOf() que averigua si una cadena se encuentra dentro de otra cadena
- devolviendo como valor la posición de la cadena encontrada o el valor de -1 si es que no la encuentra
- que para este caso queremos averiguar si el caracter presionado se encuentra entre las letras permitidas.
-*/
+
    if(letras.indexOf(tecla)==-1 && !tecla_especial){
        return false;
    }
