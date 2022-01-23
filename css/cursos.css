@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.tituloCurso{
+    color: #294661;
+    font-size: 25px;
+    margin-left: 45%;
+    margin-right: 43%;
+    margin-top: none;
+}
+.container {
+    position: absolute;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1px;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+}
+
+.container .card {
+    position: relative;
+    max-width: 300px;
+    height: 225px;
+    background: #6893be;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-in-out;
+    border-radius: 15%;
+}
+
+.container .card:hover {
+    height: 400px;
+}
+
+.container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+}
+
+.container .card .imgBx img {
+    max-width: 100%;
+    border-radius: 45px;
+}
+
+.container .card .content {
+    position: relative;
+    margin-top: -120px;
+    padding: 5px 10px;
+    text-align: center;
+    color: white;
+    visibility: hidden;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.2s;
+}
+
+@media (max-width: 950px) {
+    .container{
+        
+        width: 60%;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+    
+    .tituloCurso{
+        margin-left: 27%;
+        margin-right: 27%;
+    }
+    .container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 2px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+}
